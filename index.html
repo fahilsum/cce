@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caesar Cipher Encryption</title>
+  <link rel="stylesheet" href="assets/cs/styles.css">
+</head>
+
+<body>
+  <button class="toggle-button" onclick="toggleMode()">Change Mode</button>
+
+  <div id="encryptionSection" class="section">
+    <h1>Caesar Cipher Encryption</h1>
+
+    <label>Masukkan Teks:</label>
+    <textarea id="plaintext" placeholder="Masukkan teks di sini..."></textarea>
+
+    <label>Masukkan Jumlah Pergeseran (1–25):</label>
+    <input type="number" id="shift" placeholder="Default 3" min="1" max="25" style="font-style: italic;">
+
+    <button onclick="encryptMessage()">Enkripsi</button>
+
+    <p><b>Encrypted Message:</b></p>
+    <div id="encryptedMessage" class="box"></div>
+
+    <button onclick="copyText()">Copy</button>
+  </div>
+
+  <div id="decryptionSection" class="section hidden">
+    <h1>Caesar Cipher Decryption</h1>
+
+    <label>Masukkan Ciphertext:</label>
+    <textarea id="ciphertext" placeholder="Masukkan ciphertext di sini..."></textarea>
+
+    <button onclick="bruteForce()">Brute Force (25 Shift)</button>
+
+    <div id="bruteForceResult" class="box"></div>
+  </div>
+
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>
