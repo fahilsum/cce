@@ -20,17 +20,17 @@ Proyek ini dibangun menggunakan **HTML, CSS, dan JavaScript**, dan berjalan sepe
 Caesar Cipher adalah cipher substitusi klasik di mana setiap huruf pada teks biasa digeser sejumlah posisi tetap dalam alfabet.
 
 Contohnya:
-- HELLO --> KHOOR (dengan pergeseran 3)
-- WORLD --> BTWQI (dengan pergeseran 5)
+- HELLO --> KHOOR (dengan pergeseran +3)
+- WORLD --> BTWQI (dengan pergeseran +5)
 
 Meskipun mudah dipahami dan diimplementasikan, cipher ini **tidak aman** karena dapat dengan mudah dipecahkan menggunakan teknik brute-force.
 
 ---
 
 ## 🚀 Tech Stack
-- HTML
-- CSS
-- JavaScript
+- **HTML**
+- **CSS**
+- **JavaScript**
 
 ---
 
