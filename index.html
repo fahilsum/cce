@@ -5,44 +5,68 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Caesar Cipher Encryption</title>
-  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/1792/1792163.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
-  <button class="toggle-button" onclick="toggleMode()">Change Mode</button>
+  <button class="toggle-button" onclick="toggleMode()" aria-label="Toggle between encryption and decryption mode">
+    <i class="fas fa-exchange-alt"></i> Change Mode
+  </button>
 
-  <div id="encryptionSection" class="section">
-    <h1>Caesar Cipher Encryption</h1>
+  <div id="encryptionSection" class="section fade-in">
+    <h1><i class="fas fa-lock"></i> Caesar Cipher Encryption</h1>
 
-    <label>Masukkan Teks:</label>
-    <textarea id="plaintext" placeholder="Masukkan teks di sini..."></textarea>
+    <label for="plaintext"><i class="fas fa-edit"></i> Masukkan Teks:</label>
+    <textarea id="plaintext" placeholder="Masukkan teks di sini..." aria-describedby="plaintext-help"></textarea>
+    <small id="plaintext-help" class="help-text">Teks asli yang akan dienkripsi.</small>
 
-    <label>Masukkan Jumlah Pergeseran (1–25):</label>
-    <input type="number" id="shift" placeholder="Default 3" min="1" max="25" style="font-style: italic;">
+    <label for="shift"><i class="fas fa-arrows-alt-h"></i> Masukkan Jumlah Pergeseran (1–25):</label>
+    <input type="number" id="shift" placeholder="Default 3" min="1" max="25" style="font-style: italic;" aria-describedby="shift-help">
+    <small id="shift-help" class="help-text">Jumlah langkah pergeseran huruf (1-25).</small>
 
-    <button onclick="encryptMessage()">Enkripsi</button>
+    <button onclick="encryptMessage()" class="btn-primary">
+      <i class="fas fa-play"></i> Enkripsi
+    </button>
 
-    <p><b>Encrypted Message:</b></p>
-    <div id="encryptedMessage" class="box"></div>
+    <p><b><i class="fas fa-shield-alt"></i> Encrypted Message:</b></p>
+    <div id="encryptedMessage" class="box neumorphic" aria-live="polite"></div>
 
-    <button onclick="copyText()">Copy</button>
+    <button onclick="copyText()" class="btn-secondary">
+      <i class="fas fa-copy"></i> Copy
+    </button>
   </div>
 
-  <div id="decryptionSection" class="section hidden">
-    <h1>Caesar Cipher Decryption</h1>
+  <div id="decryptionSection" class="section hidden fade-in">
+    <h1><i class="fas fa-unlock"></i> Caesar Cipher Decryption</h1>
 
-    <label>Masukkan Ciphertext:</label>
-    <textarea id="ciphertext" placeholder="Masukkan ciphertext di sini..."></textarea>
+    <label for="ciphertext"><i class="fas fa-edit"></i> Masukkan Ciphertext:</label>
+    <textarea id="ciphertext" placeholder="Masukkan ciphertext di sini..." aria-describedby="ciphertext-help"></textarea>
+    <small id="ciphertext-help" class="help-text">Teks terenkripsi yang akan didekripsi.</small>
 
-    <button onclick="bruteForce()">Brute Force (25 Shift)</button>
+    <button onclick="bruteForce()" class="btn-primary">
+      <i class="fas fa-search"></i> Brute Force (25 Shift)
+    </button>
 
-    <div id="bruteForceResult" class="box"></div>
+    <div id="bruteForceResult" class="box neumorphic" aria-live="polite"></div>
   </div>
 
-  <footer><a href="https://fahilsum.github.io/" target="_blank">@fahilsum</a></footer>
+  <footer>
+    <a href="https://fahilsum.github.io/" target="_blank" aria-label="Visit creator's site">
+      <i class="fas fa-user"></i> @fahilsum
+    </a>
+  </footer>
 
   <script src="assets/js/script.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => {
+        section.classList.add('visible');
+      });
+    });
+  </script>
 </body>
 
 </html>
