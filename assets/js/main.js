@@ -30,7 +30,6 @@ function encryptMessage() {
     caesarCipher(text, shift);
 }
 
-
 function bruteForce() {
   const text = document.getElementById("ciphertext").value;
   if (!text) {
@@ -60,7 +59,6 @@ function copyText() {
   document.body.removeChild(tempTextArea);
   alert("Teks berhasil disalin!");
 }
-
 
 function toggleMode() {
   const encryption = document.getElementById("encryptionSection");
